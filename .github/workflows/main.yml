@@ -26,10 +26,13 @@ jobs:
         export SENTRY_PROJECT=xochicalli_monitoreo
         export VERSION
         VERSION=$(sentry-cli releases propose-version)
-        echo "Sentry release version: $VERSION"
+        echo "Sentry release version before trimming: $VERSION"
+        VERSION=$(echo "$VERSION" | tr -d '[:space:]')
+        echo "Sentry release version after trimming: $VERSION"
     
     - name: Create and finalize Sentry release
       run: |
+        echo "Creating Sentry release for version $VERSION"
         sentry-cli releases new "$VERSION"
         sentry-cli releases set-commits "$VERSION" --auto
         sentry-cli releases finalize "$VERSION"
