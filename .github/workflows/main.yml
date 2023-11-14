@@ -16,20 +16,16 @@ jobs:
     - name: Install dependencies
       run: npm install --legacy-peer-deps
 
-
     - name: Install Sentry CLI
       run: curl -sL https://sentry.io/get-cli/ | bash
 
-    - name: Configure Sentry environment variables
+    - name: Configure Sentry environment variables and determine version
       run: |
         export SENTRY_AUTH_TOKEN=c5c6f1cec324d1ddc8b4fd7e1d447e728da714c2adf1e5e2d956896bdaf63940
         export SENTRY_ORG=monitoreo-xochicalli
         export SENTRY_PROJECT=xochicalli_monitoreo
-        export VERSION
-        VERSION=$(sentry-cli releases propose-version)
-        echo "Sentry release version before trimming: $VERSION"
-        VERSION=$(echo "$VERSION" | tr -d '[:space:]')
-        echo "Sentry release version after trimming: $VERSION"
+        export VERSION=$(sentry-cli releases propose-version | tr -d '[:space:]')
+        echo "Sentry release version: $VERSION"
     
     - name: Create and finalize Sentry release
       run: |
