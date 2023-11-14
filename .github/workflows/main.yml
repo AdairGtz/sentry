@@ -30,8 +30,8 @@ jobs:
         VERSION=$(echo "$VERSION" | tr -cd '[:alnum:]._-')
         echo "Sentry release version: $VERSION"
     
-    - name: Debug print VERSION
-      run: "VERSION: $VERSION"
+    - name: Debug print environment variables
+      run: printenv
     
     - name: Create and finalize Sentry release
       run: |
