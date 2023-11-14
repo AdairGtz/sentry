@@ -24,11 +24,11 @@ jobs:
         export SENTRY_AUTH_TOKEN=c5c6f1cec324d1ddc8b4fd7e1d447e728da714c2adf1e5e2d956896bdaf63940
         export SENTRY_ORG=monitoreo-xochicalli
         export SENTRY_PROJECT=xochicalli_monitoreo
-        export VERSION=$(sentry-cli releases propose-version)
+        export VERSION=$(npx sentry-cli releases propose-version)
         echo "Sentry release version: $VERSION"
     
     - name: Create and finalize Sentry release
       run: |
-        sentry-cli releases new "$VERSION"
-        sentry-cli releases set-commits "$VERSION" --auto
-        sentry-cli releases finalize "$VERSION"
+        npx sentry-cli releases new "$VERSION"
+        npx sentry-cli releases set-commits "$VERSION" --auto
+        npx sentry-cli releases finalize "$VERSION"
