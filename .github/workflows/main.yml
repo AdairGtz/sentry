@@ -25,7 +25,7 @@ jobs:
         export SENTRY_ORG=monitoreo-xochicalli
         export SENTRY_PROJECT=xochicalli_monitoreo
         export VERSION
-        VERSION=$(sentry-cli releases propose-version | tr -d '[:space:]' | tr -d '/')
+        VERSION=$(echo "v$(git rev-parse --short HEAD)" | tr -d '[:space:]' | tr -d '/')
         echo "Sentry release version: $VERSION"
     
     - name: Create and finalize Sentry release
