@@ -31,7 +31,7 @@ jobs:
         echo "Sentry release version: $VERSION"
     
     - name: Debug print VERSION
-      run: echo "VERSION: $VERSION"
+      run: "VERSION: $VERSION"
     
     - name: Create and finalize Sentry release
       run: |
