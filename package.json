@@ -22,6 +22,8 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^2.9.11",
+    "@sentry/react": "^7.80.1",
+    "@sentry/vite-plugin": "^2.10.0",
     "aria-query": "^5.3.0",
     "axios": "^1.4.0",
     "enzyme-adapter-react-16": "^1.15.7",

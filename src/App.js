@@ -55,3 +55,4 @@ export const App = () => {
                 pathname !== "/signup" &&
                 pathname !== "/checkout" && _jsx(Footer, {})] }));
 };
+
