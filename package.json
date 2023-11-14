@@ -15,7 +15,7 @@
     "buildandtest": "npm run build && jest",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "sentry": "npx sentry-cli"
+    "sentry": "sentry-cli"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",

@@ -29,6 +29,6 @@ jobs:
     
     - name: Create and finalize Sentry release
       run: |
-        npx sentry-cli releases new "$VERSION"
-        npx sentry-cli releases set-commits "$VERSION" --auto
-        npx sentry-cli releases finalize "$VERSION"
+        npm run sentry releases new "$VERSION"
+        npm run sentry releases set-commits "$VERSION" --auto
+        npm run sentry releases finalize "$VERSION"
