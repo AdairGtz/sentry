@@ -21,7 +21,7 @@ jobs:
 
     - name: Configure Sentry environment variables
       run: |
-        export SENTRY_AUTH_TOKEN=your-sentry-auth-token
+        export SENTRY_AUTH_TOKEN=c5c6f1cec324d1ddc8b4fd7e1d447e728da714c2adf1e5e2d956896bdaf63940
         export SENTRY_ORG=monitoreo-xochicalli
         export SENTRY_PROJECT=xochicalli_monitoreo
         export VERSION=$(sentry-cli releases propose-version)
